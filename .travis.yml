@@ -7,6 +7,5 @@ cache:
     - node_modules
 install:
   - yarn install --production=false
-  - npm install -g codecov
 script:
-  - npm run test -- --coverage && codecov
+  - yarn test
