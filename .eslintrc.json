@@ -1,13 +1,13 @@
 {
     "settings": {
         "react": {
-            "version": "15.0"
+            "version": "16.0"
         }
     },
     "env": {
         "browser": true,
         "node": true,
-        "mocha": true,
+        "jest": true,
         "es6": true
     },
     "globals": {},
