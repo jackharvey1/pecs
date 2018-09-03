@@ -1,4 +1,9 @@
 {
+    "settings": {
+        "react": {
+            "version": "15.0"
+        }
+    },
     "env": {
         "browser": true,
         "node": true,
@@ -11,7 +16,7 @@
         "eslint:recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": 2017,
+        "ecmaVersion": 9,
         "sourceType": "module",
         "ecmaFeatures": {
            "jsx": true,

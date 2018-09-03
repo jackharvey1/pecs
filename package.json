@@ -14,9 +14,16 @@
     "jest": "react-scripts test --env=jsdom",
     "lint": "eslint .",
     "test": "yarn lint && yarn jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.35.3",
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "@storybook/react": "^3.4.10",
     "eslint": "^5.4.0",
     "eslint-plugin-react": "^7.11.1"
   }
