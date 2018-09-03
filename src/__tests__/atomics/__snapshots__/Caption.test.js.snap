@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caption component renders as intended 1`] = `
+<styled.p>
+  Some text
+</styled.p>
+`;

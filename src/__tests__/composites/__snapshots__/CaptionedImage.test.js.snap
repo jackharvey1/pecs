@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CaptionedImage component renders as intended 1`] = `
+<styled.div>
+  <Caption
+    src="http://image.com/image.png"
+  />
+  <Caption
+    text="Caption"
+  />
+</styled.div>
+`;
