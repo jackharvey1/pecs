@@ -7,6 +7,7 @@ import Image from '../atomics/Image';
 const InlineFlexDiv = styled.div`
     display: inline-flex;
     flex-direction: column;
+    margin: 20px;
 `;
 
 const CaptionedImage = ({ text, src }) => (
