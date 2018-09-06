@@ -1,4 +1,5 @@
 import { configure } from '@storybook/react';
+import '../src/globalStyles.css';
 
 const req = require.context('../src/', true, /\.stories\.js$/)
 

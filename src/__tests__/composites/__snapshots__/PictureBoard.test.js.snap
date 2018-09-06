@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PictureBoard component renders as intended 1`] = `
+<styled.div>
+  <CaptionedImage
+    key="0"
+    src="http://image.com/image.png"
+    text="Caption"
+  />
+</styled.div>
+`;
