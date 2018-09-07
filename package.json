@@ -38,7 +38,8 @@
       "!<rootDir>/node_modules/",
       "!src/stories/**/*.stories.js",
       "!src/index.js",
-      "!src/registerServiceWorker.js"
+      "!src/registerServiceWorker.js",
+      "!src/assets/index.js"
     ],
     "coverageThreshold": {
       "global": {

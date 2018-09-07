@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DragHelper component renders a large helper when prop big is passed 1`] = `
+.c0 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
+<div
+  className="c0"
+  id="big-helper"
+/>
+`;
+
+exports[`DragHelper component renders a left translated helper when no prop is passed 1`] = `
+.c0 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
+<div
+  className="c0"
+  id="helper"
+/>
+`;
+
+exports[`DragHelper component renders a regular right translated helper when no prop is passed 1`] = `
+.c0 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transform: translateX(+100%);
+  -ms-transform: translateX(+100%);
+  transform: translateX(+100%);
+}
+
+<div
+  className="c0"
+  id="helper"
+/>
+`;
+
+exports[`DragHelper component returns null when shouldDisplay is not true 1`] = `null`;

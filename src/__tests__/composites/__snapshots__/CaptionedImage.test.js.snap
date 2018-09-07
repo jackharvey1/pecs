@@ -30,6 +30,9 @@ exports[`CaptionedImage component renders as intended 1`] = `
   <img
     alt="image"
     className="c1"
+    draggable={true}
+    id="container"
+    onDragStart={[Function]}
     src="http://image.com/image.png"
   />
   <p

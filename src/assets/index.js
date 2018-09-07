@@ -1,6 +1,15 @@
-export { default as breakfast } from './breakfast.png';
-export { default as getReady } from './get-ready.png';
-export { default as shoes } from './shoes.png';
-export { default as timedVideoGame } from './timed-video-game.png';
-export { default as toysTidiedUp } from './toys-tidied-up.png';
-export { default as washYourHands } from './wash-your-hands.png';
+import breakfast from './breakfast.png';
+import getReady from './get-ready.png';
+import shoes from './shoes.png';
+import timedVideoGame from './timed-video-game.png';
+import toysTidiedUp from './toys-tidied-up.png';
+import washYourHands from './wash-your-hands.png';
+
+export default {
+    breakfast,
+    getReady,
+    shoes,
+    timedVideoGame,
+    toysTidiedUp,
+    washYourHands,
+};

@@ -5,6 +5,11 @@ import PictureBoard from '../../components/composites/PictureBoard';
 describe('PictureBoard component', () => {
     it('renders as intended', () => {
         const wrapper = renderer.create(<PictureBoard
+            id="storyboard"
+            dragging={false}
+            container="storyboard"
+            onDrop={() => null}
+            onDragOver={() => null}
             data={[
                 {
                     src: 'http://image.com/image.png',
@@ -12,6 +17,7 @@ describe('PictureBoard component', () => {
                     text: 'Caption',
                 },
             ]}
+            onDragStart={() => null}
         />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
