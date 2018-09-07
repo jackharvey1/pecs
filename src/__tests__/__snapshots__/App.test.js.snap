@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders renders as intended 1`] = `
-.c4 {
+exports[`App component renders renders as intended 1`] = `
+.c6 {
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
@@ -9,11 +9,11 @@ exports[`renders renders as intended 1`] = `
   text-align: center;
 }
 
-.c3 {
+.c5 {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
 }
 
-.c2 {
+.c4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -24,14 +24,43 @@ exports[`renders renders as intended 1`] = `
   margin: 20px;
 }
 
+.c2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+
 .c1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border-width: 1px 0;
+  border-color: lightgray;
+  border-style: solid;
+  min-height: 256px;
+  width: 100vw;
+  position: relative;
+}
+
+.c3 {
+  position: relative;
 }
 
 .c0 {
@@ -49,6 +78,9 @@ exports[`renders renders as intended 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -56,79 +88,93 @@ exports[`renders renders as intended 1`] = `
 >
   <div
     className="c1"
+    id="storyboard"
+    onDragOver={[Function]}
+    onDrop={[Function]}
   >
     <div
       className="c2"
+      id="storyboard-0"
+    />
+    <div
+      className="c2"
+      id="storyboard-0"
+    />
+  </div>
+  <div
+    className="c1"
+    id="pictureBank"
+    onDragOver={[Function]}
+    onDrop={[Function]}
+  >
+    <div
+      className="c2"
+      id="pictureBank-0"
+    />
+    <div
+      className="c3"
+      id="pictureBank"
     >
-      <img
-        alt="breakfast"
-        className="c3"
-        src="breakfast.png"
-      />
-      <p
+      <div
         className="c4"
-      />
+      >
+        <img
+          alt="image1"
+          className="c5"
+          draggable={true}
+          id="pictureBank-0"
+          onDragStart={[Function]}
+          src="image1.jpg"
+        />
+        <p
+          className="c6"
+        />
+      </div>
+    </div>
+    <div
+      className="c3"
+      id="pictureBank"
+    >
+      <div
+        className="c4"
+      >
+        <img
+          alt="image2"
+          className="c5"
+          draggable={true}
+          id="pictureBank-1"
+          onDragStart={[Function]}
+          src="image2.jpg"
+        />
+        <p
+          className="c6"
+        />
+      </div>
+    </div>
+    <div
+      className="c3"
+      id="pictureBank"
+    >
+      <div
+        className="c4"
+      >
+        <img
+          alt="image3"
+          className="c5"
+          draggable={true}
+          id="pictureBank-2"
+          onDragStart={[Function]}
+          src="image3.jpg"
+        />
+        <p
+          className="c6"
+        />
+      </div>
     </div>
     <div
       className="c2"
-    >
-      <img
-        alt="getReady"
-        className="c3"
-        src="get-ready.png"
-      />
-      <p
-        className="c4"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <img
-        alt="shoes"
-        className="c3"
-        src="shoes.png"
-      />
-      <p
-        className="c4"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <img
-        alt="timedVideoGame"
-        className="c3"
-        src="timed-video-game.png"
-      />
-      <p
-        className="c4"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <img
-        alt="toysTidiedUp"
-        className="c3"
-        src="toys-tidied-up.png"
-      />
-      <p
-        className="c4"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <img
-        alt="washYourHands"
-        className="c3"
-        src="wash-your-hands.png"
-      />
-      <p
-        className="c4"
-      />
-    </div>
+      id="pictureBank-3"
+    />
   </div>
 </div>
 `;

@@ -6,12 +6,20 @@ const ShadowedImage = styled.img`
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
 `;
 
-const Image = ({ src, alt }) =>
-    (<ShadowedImage src={src} alt={alt} />);
+const Image = ({ id, src, alt, onDragStart }) =>
+    (<ShadowedImage
+        id={id}
+        src={src}
+        alt={alt}
+        onDragStart={(event) => onDragStart(event, src)}
+        draggable
+    />);
 
 Image.propTypes = {
-    src: PropTypes.string,
-    alt: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    onDragStart: PropTypes.func.isRequired,
 };
 
 export default Image;

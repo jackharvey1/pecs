@@ -8,6 +8,9 @@ exports[`Image component renders as intended 1`] = `
 <img
   alt="image"
   className="c0"
+  draggable={true}
+  id="container"
+  onDragStart={[Function]}
   src="http://image.com/image.png"
 />
 `;

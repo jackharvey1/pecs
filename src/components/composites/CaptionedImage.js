@@ -10,17 +10,24 @@ const InlineFlexDiv = styled.div`
     margin: 20px;
 `;
 
-const CaptionedImage = ({ src, alt, text }) => (
+const CaptionedImage = ({ id, src, alt, text, onDragStart }) => (
     <InlineFlexDiv>
-        <Image src={src} alt={alt} />
+        <Image
+            id={id}
+            src={src}
+            alt={alt}
+            onDragStart={onDragStart}
+        />
         <Caption text={text} />
     </InlineFlexDiv>
 );
 
 CaptionedImage.propTypes = {
-    src: PropTypes.string,
-    alt: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
     text: PropTypes.string,
+    onDragStart: PropTypes.func.isRequired,
 };
 
 export default CaptionedImage;
