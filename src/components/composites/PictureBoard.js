@@ -10,10 +10,11 @@ const FlexRow = styled.div`
 
 const PictureBoard = ({ data }) => (
     <FlexRow>
-        {data && data.map(({ src, text }, i) => (
+        {data && data.map(({ src, alt, text }, i) => (
             <CaptionedImage
                 key={i}
                 src={src}
+                alt={alt}
                 text={text}
             />
         ))}
@@ -24,6 +25,7 @@ PictureBoard.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             src: PropTypes.string,
+            alt: PropTypes.string,
             text: PropTypes.string
         })
     )

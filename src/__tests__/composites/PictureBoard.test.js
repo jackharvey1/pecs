@@ -7,6 +7,7 @@ describe('PictureBoard component', () => {
         const wrapper = shallow(<PictureBoard
             data={[{
                 src: 'http://image.com/image.png',
+                alt: 'image',
                 text: 'Caption'
             }]}
         />);

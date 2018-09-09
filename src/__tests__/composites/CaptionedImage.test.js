@@ -6,6 +6,7 @@ describe('CaptionedImage component', () => {
     it('renders as intended', () => {
         const wrapper = shallow(<CaptionedImage
             src="http://image.com/image.png"
+            alt="image"
             text="Caption"
         />);
         expect(wrapper).toMatchSnapshot();

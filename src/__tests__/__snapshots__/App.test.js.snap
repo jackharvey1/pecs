@@ -6,21 +6,27 @@ exports[`renders renders as intended 1`] = `
     data={
       Array [
         Object {
+          "alt": "breakfast",
           "src": "breakfast.png",
         },
         Object {
+          "alt": "getReady",
           "src": "get-ready.png",
         },
         Object {
+          "alt": "shoes",
           "src": "shoes.png",
         },
         Object {
+          "alt": "timedVideoGame",
           "src": "timed-video-game.png",
         },
         Object {
+          "alt": "toysTidiedUp",
           "src": "toys-tidied-up.png",
         },
         Object {
+          "alt": "washYourHands",
           "src": "breakfast.png",
         },
       ]

@@ -2,7 +2,8 @@
 
 exports[`CaptionedImage component renders as intended 1`] = `
 <styled.div>
-  <Caption
+  <Image
+    alt="image"
     src="http://image.com/image.png"
   />
   <Caption
