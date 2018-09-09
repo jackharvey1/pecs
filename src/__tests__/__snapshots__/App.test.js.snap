@@ -1,3 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders renders as intended 1`] = `<styled.div />`;
+exports[`renders renders as intended 1`] = `
+<styled.div>
+  <PictureBoard
+    data={
+      Array [
+        Object {
+          "src": "breakfast.png",
+        },
+        Object {
+          "src": "get-ready.png",
+        },
+        Object {
+          "src": "shoes.png",
+        },
+        Object {
+          "src": "timed-video-game.png",
+        },
+        Object {
+          "src": "toys-tidied-up.png",
+        },
+        Object {
+          "src": "breakfast.png",
+        },
+      ]
+    }
+  />
+</styled.div>
+`;

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import * as images from '../assets';
+import PictureBoard from './composites/PictureBoard';
 
 const SuperContainer = styled.div`
     width: 100vw;
@@ -10,8 +12,23 @@ const SuperContainer = styled.div`
     align-items: center;
 `;
 
-const App = () => (
-    <SuperContainer />
-);
+export default class App extends Component {
+    constructor () {
+        const pictureBank = Object.keys(images).map(imageName => ({
+            src: images[imageName]
+        }));
 
-export default App;
+        super();
+        this.state = {
+            pictureBank
+        };
+    }
+
+    render() {
+        return (
+            <SuperContainer>
+                <PictureBoard data={this.state.pictureBank} />
+            </SuperContainer>
+        );
+    }
+}
