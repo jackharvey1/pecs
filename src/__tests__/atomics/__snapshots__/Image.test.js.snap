@@ -2,6 +2,7 @@
 
 exports[`Image component renders as intended 1`] = `
 <styled.img
+  alt="image"
   src="http://image.com/image.png"
 />
 `;

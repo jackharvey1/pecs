@@ -15,7 +15,8 @@ const SuperContainer = styled.div`
 export default class App extends Component {
     constructor () {
         const pictureBank = Object.keys(images).map(imageName => ({
-            src: images[imageName]
+            src: images[imageName],
+            alt: imageName
         }));
 
         super();

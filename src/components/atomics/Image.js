@@ -6,12 +6,13 @@ const ShadowedImage = styled.img`
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .25);
 `;
 
-const Caption = props =>
-    (<ShadowedImage src={props.src} />);
+const Image = ({ src, alt }) =>
+    (<ShadowedImage src={src} alt={alt} />);
 
-Caption.propTypes = {
-    src: PropTypes.string
+Image.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string
 };
 
-export default Caption;
+export default Image;
 

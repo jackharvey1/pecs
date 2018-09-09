@@ -3,6 +3,7 @@
 exports[`PictureBoard component renders as intended 1`] = `
 <styled.div>
   <CaptionedImage
+    alt="image"
     key="0"
     src="http://image.com/image.png"
     text="Caption"

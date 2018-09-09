@@ -10,15 +10,16 @@ const InlineFlexDiv = styled.div`
     margin: 20px;
 `;
 
-const CaptionedImage = ({ text, src }) => (
+const CaptionedImage = ({ src, alt, text }) => (
     <InlineFlexDiv>
-        <Image src={src} />
+        <Image src={src} alt={alt} />
         <Caption text={text} />
     </InlineFlexDiv>
 );
 
 CaptionedImage.propTypes = {
     src: PropTypes.string,
+    alt: PropTypes.string,
     text: PropTypes.string
 };
 
