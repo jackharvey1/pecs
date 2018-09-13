@@ -27,7 +27,7 @@ exports[`renders renders as intended 1`] = `
         },
         Object {
           "alt": "washYourHands",
-          "src": "breakfast.png",
+          "src": "wash-your-hands.png",
         },
       ]
     }
