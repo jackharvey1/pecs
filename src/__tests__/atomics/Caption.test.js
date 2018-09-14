@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Caption from '../../components/atomics/Caption';
 
 describe('Caption component', () => {
     it('renders as intended', () => {
-        const wrapper = shallow(<Caption text="Some text" />);
+        const wrapper = renderer.create(<Caption text="Some text" />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 

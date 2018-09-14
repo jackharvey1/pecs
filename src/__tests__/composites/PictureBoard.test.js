@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import PictureBoard from '../../components/composites/PictureBoard';
 
 describe('PictureBoard component', () => {
     it('renders as intended', () => {
-        const wrapper = shallow(<PictureBoard
+        const wrapper = renderer.create(<PictureBoard
             data={[{
                 src: 'http://image.com/image.png',
                 alt: 'image',
                 text: 'Caption'
             }]}
-        />);
+        />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 });
