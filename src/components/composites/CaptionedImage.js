@@ -20,7 +20,7 @@ const CaptionedImage = ({ src, alt, text }) => (
 CaptionedImage.propTypes = {
     src: PropTypes.string,
     alt: PropTypes.string,
-    text: PropTypes.string
+    text: PropTypes.string,
 };
 
 export default CaptionedImage;

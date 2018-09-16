@@ -5,11 +5,13 @@ import PictureBoard from '../../components/composites/PictureBoard';
 describe('PictureBoard component', () => {
     it('renders as intended', () => {
         const wrapper = renderer.create(<PictureBoard
-            data={[{
-                src: 'http://image.com/image.png',
-                alt: 'image',
-                text: 'Caption'
-            }]}
+            data={[
+                {
+                    src: 'http://image.com/image.png',
+                    alt: 'image',
+                    text: 'Caption',
+                },
+            ]}
         />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });

@@ -16,12 +16,12 @@ export default class App extends Component {
     constructor () {
         const pictureBank = Object.keys(images).map(imageName => ({
             src: images[imageName],
-            alt: imageName
+            alt: imageName,
         }));
 
         super();
         this.state = {
-            pictureBank
+            pictureBank,
         };
     }
 
