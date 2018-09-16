@@ -14,7 +14,7 @@ const Caption = props =>
     (<P>{props.text}</P>);
 
 Caption.propTypes = {
-    text: PropTypes.string
+    text: PropTypes.string,
 };
 
 export default Caption;

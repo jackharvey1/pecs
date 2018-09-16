@@ -26,9 +26,9 @@ PictureBoard.propTypes = {
         PropTypes.shape({
             src: PropTypes.string,
             alt: PropTypes.string,
-            text: PropTypes.string
+            text: PropTypes.string,
         })
-    )
+    ),
 };
 
 export default PictureBoard;
