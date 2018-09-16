@@ -216,7 +216,7 @@
         "prefer-reflect": "off",
         "prefer-template": "error",
         "quote-props": "off",
-        "quotes": "off",
+        "quotes": ["error", "single"],
         "radix": "error",
         "require-await": "error",
         "require-jsdoc": "off",
