@@ -10,7 +10,7 @@ const InlineFlexDiv = styled.div`
     margin: 20px;
 `;
 
-const CaptionedImage = ({ id, src, alt, text, onDragStart }) => (
+const CaptionedImage = ({ id, src, alt, caption, onDragStart, index, addToCaption }) => (
     <InlineFlexDiv>
         <Image
             id={id}
@@ -18,16 +18,23 @@ const CaptionedImage = ({ id, src, alt, text, onDragStart }) => (
             alt={alt}
             onDragStart={onDragStart}
         />
-        <Caption text={text} />
+        <Caption
+            index={index}
+            caption={caption}
+            addToCaption={addToCaption}
+            shouldDisplayCaption={id.includes('storyboard')}
+        />
     </InlineFlexDiv>
 );
 
 CaptionedImage.propTypes = {
-    src: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
-    text: PropTypes.string,
+    caption: PropTypes.string,
     onDragStart: PropTypes.func.isRequired,
+    index: PropTypes.number.isRequired,
+    addToCaption: PropTypes.func,
 };
 
 export default CaptionedImage;

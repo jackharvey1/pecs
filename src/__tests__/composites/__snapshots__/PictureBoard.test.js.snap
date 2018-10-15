@@ -2,11 +2,16 @@
 
 exports[`PictureBoard component renders as intended 1`] = `
 .c5 {
+  border: none;
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
   margin-top: 12px;
   text-align: center;
+}
+
+.c5:focus {
+  outline: none;
 }
 
 .c4 {
@@ -88,11 +93,12 @@ exports[`PictureBoard component renders as intended 1`] = `
         onDragStart={[Function]}
         src="http://image.com/image.png"
       />
-      <p
+      <input
         className="c5"
-      >
-        Caption
-      </p>
+        onChange={[Function]}
+        placeholder="Add caption here"
+        value={undefined}
+      />
     </div>
   </div>
   <div

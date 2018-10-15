@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders renders as intended 1`] = `
-.c6 {
-  color: #333333;
-  font-size: 16px;
-  font-family: Helvetica,Arial,sans-serif;
-  margin-top: 12px;
-  text-align: center;
-}
-
 .c5 {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
 }
@@ -126,9 +118,6 @@ exports[`App component renders renders as intended 1`] = `
           onDragStart={[Function]}
           src="image1.jpg"
         />
-        <p
-          className="c6"
-        />
       </div>
     </div>
     <div
@@ -146,9 +135,6 @@ exports[`App component renders renders as intended 1`] = `
           onDragStart={[Function]}
           src="image2.jpg"
         />
-        <p
-          className="c6"
-        />
       </div>
     </div>
     <div
@@ -165,9 +151,6 @@ exports[`App component renders renders as intended 1`] = `
           id="pictureBank-2"
           onDragStart={[Function]}
           src="image3.jpg"
-        />
-        <p
-          className="c6"
         />
       </div>
     </div>

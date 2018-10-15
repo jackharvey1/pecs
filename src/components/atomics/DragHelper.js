@@ -24,8 +24,8 @@ const BigHelper = styled.div`
     align-self: stretch;
 `;
 
-const DragHelper = ({ shouldDisplay, id, left, big }) => {
-    if (shouldDisplay) {
+const DragHelper = ({ shouldDisplayDragHelper, id, left, big }) => {
+    if (shouldDisplayDragHelper) {
         if (left) {
             return <LeftHelper id={id} />;
         }
@@ -41,7 +41,7 @@ const DragHelper = ({ shouldDisplay, id, left, big }) => {
 };
 
 DragHelper.propTypes = {
-    shouldDisplay: PropTypes.bool,
+    shouldDisplayDragHelper: PropTypes.bool,
     left: PropTypes.bool,
     big: PropTypes.bool,
     id: PropTypes.string.isRequired,
