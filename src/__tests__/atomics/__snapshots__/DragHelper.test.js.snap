@@ -47,4 +47,4 @@ exports[`DragHelper component renders a regular right translated helper when no 
 />
 `;
 
-exports[`DragHelper component returns null when shouldDisplay is not true 1`] = `null`;
+exports[`DragHelper component returns null when shouldDisplayDragHelper is not true 1`] = `null`;

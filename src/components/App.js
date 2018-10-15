@@ -40,6 +40,7 @@ export default class App extends Component {
                     onDragStart={this.onDragStart.bind(this)}
                     onDrop={this.onDrop.bind(this)}
                     onDragOver={this.onDragOver.bind(this)}
+                    addToCaption={this.addToCaption.bind(this)}
                     dragging={this.state.dragging}
                 />
                 <PictureBoard
@@ -51,6 +52,18 @@ export default class App extends Component {
                 />
             </SuperContainer>
         );
+    }
+
+    addToCaption (index, event) {
+        const storyboardClone = this.state.storyboard.slice();
+        storyboardClone.splice(index, 1, {
+            ...storyboardClone[index],
+            caption: event.target.value,
+        });
+
+        this.setState({
+            storyboard: storyboardClone,
+        });
     }
 
     onDragStart (event, src) {
@@ -77,7 +90,7 @@ export default class App extends Component {
             }
 
             if (eventDestination === 'storyboard') {
-                storyboardClone.splice(destinationIndex, 0, { src, alt });
+                storyboardClone.splice(destinationIndex, 0, { src, alt, caption: '' });
             }
         }
 

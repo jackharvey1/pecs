@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CaptionedImage component renders as intended 1`] = `
-.c2 {
-  color: #333333;
-  font-size: 16px;
-  font-family: Helvetica,Arial,sans-serif;
-  margin-top: 12px;
-  text-align: center;
-}
-
 .c1 {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
 }
@@ -35,10 +27,5 @@ exports[`CaptionedImage component renders as intended 1`] = `
     onDragStart={[Function]}
     src="http://image.com/image.png"
   />
-  <p
-    className="c2"
-  >
-    Caption
-  </p>
 </div>
 `;

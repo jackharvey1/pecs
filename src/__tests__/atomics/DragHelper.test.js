@@ -6,7 +6,7 @@ describe('DragHelper component', () => {
     it('renders a regular right translated helper when no prop is passed', () => {
         const wrapper = renderer.create(<DragHelper
             id="helper"
-            shouldDisplay={true}
+            shouldDisplayDragHelper={true}
         />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
@@ -15,7 +15,7 @@ describe('DragHelper component', () => {
         const wrapper = renderer.create(<DragHelper
             left
             id="helper"
-            shouldDisplay={true}
+            shouldDisplayDragHelper={true}
         />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
@@ -23,16 +23,16 @@ describe('DragHelper component', () => {
     it('renders a large helper when prop big is passed', () => {
         const wrapper = renderer.create(<DragHelper
             big
-            shouldDisplay={true}
+            shouldDisplayDragHelper={true}
             id="big-helper"
         />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('returns null when shouldDisplay is not true', () => {
+    it('returns null when shouldDisplayDragHelper is not true', () => {
         const wrapper = renderer.create(<DragHelper
             big
-            shouldDisplay={false}
+            shouldDisplayDragHelper={false}
             id="big-helper"
         />).toJSON();
         expect(wrapper).toMatchSnapshot();

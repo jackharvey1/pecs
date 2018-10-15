@@ -2,6 +2,7 @@
 
 exports[`Caption component renders as intended 1`] = `
 .c0 {
+  border: none;
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
@@ -9,9 +10,14 @@ exports[`Caption component renders as intended 1`] = `
   text-align: center;
 }
 
-<p
+.c0:focus {
+  outline: none;
+}
+
+<input
   className="c0"
->
-  Some text
-</p>
+  onChange={[Function]}
+  placeholder="Add caption here"
+  value="Some text"
+/>
 `;

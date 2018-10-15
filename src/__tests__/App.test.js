@@ -33,6 +33,7 @@ const stateWithOneImageInStoryboard = {
     storyboard: [{
         alt: 'image1',
         src: 'image1.jpg',
+        caption: '',
     }],
 };
 
@@ -84,6 +85,17 @@ describe('App component', () => {
         expect(mockEvent.dataTransfer.setData).toHaveBeenCalledWith('sourceInfo', infoString);
     });
 
+    it('addToCaption adds the caption to the state when triggered', () => {
+        const wrapper = shallow(<App />);
+        const mockEvent = {
+            target: {
+                value: 'caption',
+            },
+        };
+        wrapper.instance().addToCaption(0, mockEvent);
+        expect(wrapper.state().storyboard[0]).toHaveProperty('caption', 'caption');
+    });
+
     describe('onDrop', () => {
         it('does not modify the board if the destination is not pictureBank or storyboard', () => {
             const wrapper = shallow(<App />);
@@ -123,6 +135,26 @@ describe('App component', () => {
             };
             wrapper.instance().onDrop(mockEvent);
             expect(wrapper.state()).toEqual(stateWithOneImageInStoryboard);
+        });
+
+        it('adds a blank caption when adding to the storyboard', () => {
+            const wrapper = shallow(<App />);
+            const mockEvent = {
+                preventDefault: () => null,
+                dataTransfer: {
+                    getData: () => JSON.stringify({
+                        src: 'image1.jpg',
+                        alt: 'image1',
+                        eventSource: 'pictureBank',
+                        sourceIndex: 1,
+                    }),
+                },
+                target: {
+                    id: 'storyboard-0',
+                },
+            };
+            wrapper.instance().onDrop(mockEvent);
+            expect(wrapper.state().storyboard[0]).toHaveProperty('caption', '');
         });
 
         it('removes an item from the storyboard when storyboard is the the source', () => {
@@ -173,6 +205,7 @@ describe('App component', () => {
                 storyboard: [{
                     alt: 'image2',
                     src: 'image2.jpg',
+                    caption: '',
                 }, {
                     alt: 'image1',
                     src: 'image1.jpg',
@@ -211,6 +244,7 @@ describe('App component', () => {
                 }, {
                     alt: 'image1',
                     src: 'image1.jpg',
+                    caption: '',
                 }, {
                     alt: 'image3',
                     src: 'image3.jpg',

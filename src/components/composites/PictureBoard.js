@@ -23,31 +23,48 @@ const FlexRow = styled.div`
     position: relative;
 `;
 
-const WrapperThingy = styled.div`
+const Wrapper = styled.div`
     position: relative;
 `;
 
-const PictureBoard = ({ id, dragging, onDrop, onDragOver, data, onDragStart }) => (
+const PictureBoard = ({ id, dragging, onDrop, onDragOver, data, onDragStart, addToCaption }) => (
     <FlexRow
         id={id}
         onDrop={onDrop}
         onDragOver={onDragOver}
     >
-        <DragHelper big id={`${id}-0`} shouldDisplay />
-        {data && data.map(({ src, alt, text }, i) => (
-            <WrapperThingy id={id} key={i}>
-                <DragHelper left id={`${id}-${i}`} shouldDisplay={dragging} />
-                <DragHelper id={`${id}-${i + 1}`} shouldDisplay={dragging} />
+        <DragHelper
+            id={`${id}-0`}
+            big
+            shouldDisplayDragHelper
+        />
+        {data && data.map(({ src, alt, caption }, i) => (
+            <Wrapper id={id} key={i}>
+                <DragHelper
+                    id={`${id}-${i}`}
+                    shouldDisplayDragHelper={dragging}
+                    left
+                />
+                <DragHelper
+                    id={`${id}-${i + 1}`}
+                    shouldDisplayDragHelper={dragging}
+                />
                 <CaptionedImage
                     id={`${id}-${i}`}
                     src={src}
                     alt={alt}
-                    text={text}
+                    caption={caption}
                     onDragStart={onDragStart}
+                    index={i}
+                    addToCaption={addToCaption}
                 />
-            </WrapperThingy>
+            </Wrapper>
         ))}
-        <DragHelper big id={`${id}-${data.length}`} shouldDisplay />
+        <DragHelper
+            id={`${id}-${data.length}`}
+            big
+            shouldDisplayDragHelper
+        />
     </FlexRow>
 );
 
@@ -60,10 +77,11 @@ PictureBoard.propTypes = {
         PropTypes.shape({
             src: PropTypes.string,
             alt: PropTypes.string,
-            text: PropTypes.string,
+            caption: PropTypes.string,
         })
     ),
     onDragStart: PropTypes.func.isRequired,
+    addToCaption: PropTypes.func,
 };
 
 export default PictureBoard;
