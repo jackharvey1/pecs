@@ -30,6 +30,6 @@ describe('Image component', () => {
             />
         );
         wrapper.dive().simulate('dragstart', event);
-        expect(mockOnDragStart).toHaveBeenCalledWith(event, src);
+        expect(mockOnDragStart).toHaveBeenCalledWith(event);
     });
 });

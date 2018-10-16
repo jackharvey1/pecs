@@ -66,11 +66,12 @@ export default class App extends Component {
         });
     }
 
-    onDragStart (event, src) {
+    onDragStart (event) {
         const [eventSource, sourceIndex] = event.target.id.split('-');
 
-        const { alt } = this.state.pictureBank.find((image) => image.src === src);
-        const sourceInfo = { eventSource, sourceIndex, src, alt };
+        const { src, alt, caption = '' } = this.state[eventSource][sourceIndex];
+
+        const sourceInfo = { eventSource, sourceIndex, src, alt, caption };
         event.dataTransfer.setData('sourceInfo', JSON.stringify(sourceInfo));
     }
 
@@ -78,7 +79,7 @@ export default class App extends Component {
         event.preventDefault();
 
         const sourceInfo = event.dataTransfer.getData('sourceInfo');
-        const { eventSource, sourceIndex, src, alt } = JSON.parse(sourceInfo);
+        const { eventSource, sourceIndex, src, alt, caption } = JSON.parse(sourceInfo);
 
         const [eventDestination, destinationIndex] = event.target.id.split('-');
 
@@ -90,7 +91,7 @@ export default class App extends Component {
             }
 
             if (eventDestination === 'storyboard') {
-                storyboardClone.splice(destinationIndex, 0, { src, alt, caption: '' });
+                storyboardClone.splice(destinationIndex, 0, { src, alt, caption });
             }
         }
 

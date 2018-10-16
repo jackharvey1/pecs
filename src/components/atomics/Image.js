@@ -11,7 +11,7 @@ const Image = ({ id, src, alt, onDragStart }) =>
         id={id}
         src={src}
         alt={alt}
-        onDragStart={(event) => onDragStart(event, src)}
+        onDragStart={onDragStart}
         draggable
     />);
 

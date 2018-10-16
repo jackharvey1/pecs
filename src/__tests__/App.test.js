@@ -33,7 +33,7 @@ const stateWithOneImageInStoryboard = {
     storyboard: [{
         alt: 'image1',
         src: 'image1.jpg',
-        caption: '',
+        caption: 'image1',
     }],
 };
 
@@ -52,12 +52,15 @@ const stateWithManyImagesInStoryboard = {
     storyboard: [{
         alt: 'image1',
         src: 'image1.jpg',
+        caption: 'image1',
     }, {
         alt: 'image2',
         src: 'image2.jpg',
+        caption: 'image2',
     }, {
         alt: 'image3',
         src: 'image3.jpg',
+        caption: 'image3',
     }],
 };
 
@@ -71,16 +74,15 @@ describe('App component', () => {
         const wrapper = shallow(<App />);
         const mockEvent = {
             target: {
-                id: 'pictureBank-3',
+                id: 'pictureBank-2',
             },
             dataTransfer: {
                 setData: jest.fn(),
             },
         };
-        const src = 'image1.jpg';
-        wrapper.instance().onDragStart(mockEvent, src);
+        wrapper.instance().onDragStart(mockEvent);
 
-        const infoString = '{"eventSource":"pictureBank","sourceIndex":"3","src":"image1.jpg","alt":"image1"}';
+        const infoString = '{"eventSource":"pictureBank","sourceIndex":"2","src":"image3.jpg","alt":"image3","caption":""}';
 
         expect(mockEvent.dataTransfer.setData).toHaveBeenCalledWith('sourceInfo', infoString);
     });
@@ -105,7 +107,7 @@ describe('App component', () => {
                     getData: () => JSON.stringify({
                         src: 'image1.jpg',
                         alt: 'image1',
-                        eventSource: 'storyboard',
+                        eventSource: 'pictureBank',
                         sourceIndex: 0,
                     }),
                 },
@@ -113,6 +115,7 @@ describe('App component', () => {
                     id: 'somewhereElse-0',
                 },
             };
+            wrapper.setState(stateWithNoStoryboard);
             wrapper.instance().onDrop(mockEvent);
             expect(wrapper.state()).toEqual(stateWithNoStoryboard);
         });
@@ -125,6 +128,7 @@ describe('App component', () => {
                     getData: () => JSON.stringify({
                         src: 'image1.jpg',
                         alt: 'image1',
+                        caption: 'image1',
                         eventSource: 'pictureBank',
                         sourceIndex: 1,
                     }),
@@ -133,28 +137,9 @@ describe('App component', () => {
                     id: 'storyboard-0',
                 },
             };
+            wrapper.setState(stateWithNoStoryboard);
             wrapper.instance().onDrop(mockEvent);
             expect(wrapper.state()).toEqual(stateWithOneImageInStoryboard);
-        });
-
-        it('adds a blank caption when adding to the storyboard', () => {
-            const wrapper = shallow(<App />);
-            const mockEvent = {
-                preventDefault: () => null,
-                dataTransfer: {
-                    getData: () => JSON.stringify({
-                        src: 'image1.jpg',
-                        alt: 'image1',
-                        eventSource: 'pictureBank',
-                        sourceIndex: 1,
-                    }),
-                },
-                target: {
-                    id: 'storyboard-0',
-                },
-            };
-            wrapper.instance().onDrop(mockEvent);
-            expect(wrapper.state().storyboard[0]).toHaveProperty('caption', '');
         });
 
         it('removes an item from the storyboard when storyboard is the the source', () => {
@@ -188,6 +173,7 @@ describe('App component', () => {
                     getData: () => JSON.stringify({
                         src: 'image2.jpg',
                         alt: 'image2',
+                        caption: 'image2',
                         eventSource: 'storyboard',
                         sourceIndex: 1,
                     }),
@@ -205,13 +191,15 @@ describe('App component', () => {
                 storyboard: [{
                     alt: 'image2',
                     src: 'image2.jpg',
-                    caption: '',
+                    caption: 'image2',
                 }, {
                     alt: 'image1',
                     src: 'image1.jpg',
+                    caption: 'image1',
                 }, {
                     alt: 'image3',
                     src: 'image3.jpg',
+                    caption: 'image3',
                 }],
             });
         });
@@ -224,6 +212,7 @@ describe('App component', () => {
                     getData: () => JSON.stringify({
                         src: 'image1.jpg',
                         alt: 'image1',
+                        caption: 'image1',
                         eventSource: 'storyboard',
                         sourceIndex: 0,
                     }),
@@ -241,13 +230,15 @@ describe('App component', () => {
                 storyboard: [{
                     alt: 'image2',
                     src: 'image2.jpg',
+                    caption: 'image2',
                 }, {
                     alt: 'image1',
                     src: 'image1.jpg',
-                    caption: '',
+                    caption: 'image1',
                 }, {
                     alt: 'image3',
                     src: 'image3.jpg',
+                    caption: 'image3',
                 }],
             });
         });
