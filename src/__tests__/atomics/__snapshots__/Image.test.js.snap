@@ -3,14 +3,21 @@
 exports[`Image component renders as intended 1`] = `
 .c0 {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
+  margin: auto;
+  width: 125px;
+  height: 125px;
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 <img
   alt="image"
   className="c0"
-  draggable={true}
-  id="container"
-  onDragStart={[Function]}
   src="http://image.com/image.png"
 />
 `;

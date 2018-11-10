@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    overflow-y: hidden;
+}
+
 .SuperContainer {
     width: 100vw;
     height: 100vh;

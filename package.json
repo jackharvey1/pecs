@@ -2,10 +2,11 @@
   "name": "pecs",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://s3.eu-west-2.amazonaws.com/jack-pecs/",
+  "homepage": "https://s3.eu-west-2.amazonaws.com/jack-pecs/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-icons": "^3.2.2",
     "react-scripts": "1.1.5",
     "styled-components": "^3.4.5"
   },

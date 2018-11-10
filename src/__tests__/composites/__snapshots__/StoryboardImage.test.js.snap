@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoryboardImage component renders as intended 1`] = `
+.c3 {
+  width: 100%;
+  margin-top: 12px;
+  border: none;
+  color: #333333;
+  font-size: 16px;
+  font-family: Helvetica,Arial,sans-serif;
+  text-align: center;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c2 {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
+  margin: auto;
+  width: 125px;
+  height: 125px;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  --size: 24px;
+  font-size: var(--size);
+  top: 0;
+  right: 25px;
+  z-index: 0;
+}
+
+.c1:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  z-index: -1;
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    right: 12px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <svg
+      className={undefined}
+      fill="currentColor"
+      height="1em"
+      onClick={[Function]}
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+      />
+    </svg>
+  </div>
+  <img
+    alt="image"
+    className="c2"
+    src="http://image.com/image.png"
+  />
+  <input
+    className="c3"
+    onChange={[Function]}
+    placeholder="Add caption here"
+    value="Caption"
+  />
+</div>
+`;

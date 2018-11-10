@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridImage component renders as intended 1`] = `
+.c0 {
+  --width: calc(100vw/3);
+  height: var(--width);
+  width: var(--width);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    --width: calc(100vw/4);
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    --width: calc(100vw/6);
+  }
+}
+
+@media (min-width:1280px) {
+  .c0 {
+    --width: calc(100vw/8);
+  }
+}
+
+<img
+  alt="image"
+  className="c0"
+  onClick={[Function]}
+  src="http://image.com/image.png"
+/>
+`;
