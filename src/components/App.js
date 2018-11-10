@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import images from '../assets';
-import PictureBoard from './composites/PictureBoard';
+import Storyboard from './composites/Storyboard';
+import Gallery from './composites/Gallery';
 
 const SuperContainer = styled.div`
     width: 100vw;
@@ -24,6 +25,7 @@ export default class App extends Component {
             }));
 
         this.state = {
+            galleryTopValue: '100vh',
             dragging: false,
             pictureBank,
             storyboard: [],
@@ -33,22 +35,19 @@ export default class App extends Component {
     render () {
         return (
             <SuperContainer>
-                <PictureBoard
+                <Storyboard
                     centered
-                    id="storyboard"
                     data={this.state.storyboard}
-                    onDragStart={this.onDragStart.bind(this)}
-                    onDrop={this.onDrop.bind(this)}
-                    onDragOver={this.onDragOver.bind(this)}
                     addToCaption={this.addToCaption.bind(this)}
-                    dragging={this.state.dragging}
+                    deleteCard={this.deleteCard.bind(this)}
+                    showGallery={this.showGallery.bind(this)}
                 />
-                <PictureBoard
-                    id="pictureBank"
+                <Gallery
+                    galleryTopValue={this.state.galleryTopValue}
                     data={this.state.pictureBank}
-                    onDragStart={this.onDragStart.bind(this)}
-                    onDrop={this.onDrop.bind(this)}
-                    onDragOver={this.onDragOver.bind(this)}
+                    hideGallery={this.hideGallery.bind(this)}
+                    galleryOpenedAt={this.state.galleryOpenedAt}
+                    addToStoryboard={this.addToStoryboard.bind(this)}
                 />
             </SuperContainer>
         );
@@ -66,47 +65,36 @@ export default class App extends Component {
         });
     }
 
-    onDragStart (event, src) {
-        const [eventSource, sourceIndex] = event.target.id.split('-');
-
-        const { alt } = this.state.pictureBank.find((image) => image.src === src);
-        const sourceInfo = { eventSource, sourceIndex, src, alt };
-        event.dataTransfer.setData('sourceInfo', JSON.stringify(sourceInfo));
-    }
-
-    onDrop (event) {
-        event.preventDefault();
-
-        const sourceInfo = event.dataTransfer.getData('sourceInfo');
-        const { eventSource, sourceIndex, src, alt } = JSON.parse(sourceInfo);
-
-        const [eventDestination, destinationIndex] = event.target.id.split('-');
-
-        const storyboardClone = this.state.storyboard.slice();
-
-        if (eventDestination === 'pictureBank' || eventDestination === 'storyboard') {
-            if (eventSource === 'storyboard') {
-                storyboardClone.splice(sourceIndex, 1);
-            }
-
-            if (eventDestination === 'storyboard') {
-                storyboardClone.splice(destinationIndex, 0, { src, alt, caption: '' });
-            }
-        }
-
+    showGallery (index) {
         this.setState({
-            storyboard: storyboardClone,
-            dragging: false,
+            galleryOpenedAt: index,
+            galleryTopValue: '0',
         });
     }
 
-    onDragOver (event) {
-        event.preventDefault();
+    hideGallery () {
+        this.setState({
+            galleryTopValue: '100vh',
+        });
+    }
 
-        if (!this.state.dragging) {
-            this.setState({
-                dragging: true,
-            });
-        }
+    addToStoryboard (src, alt) {
+        const storyboardClone = this.state.storyboard.slice();
+        storyboardClone.splice(this.state.galleryOpenedAt, 0, { src, alt });
+
+        this.setState({
+            storyboard: storyboardClone,
+        });
+
+        this.hideGallery();
+    }
+
+    deleteCard (index) {
+        const storyboardClone = this.state.storyboard.slice();
+        storyboardClone.splice(index, 1);
+
+        this.setState({
+            storyboard: storyboardClone,
+        });
     }
 }

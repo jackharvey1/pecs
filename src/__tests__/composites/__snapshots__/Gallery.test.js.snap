@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery component renders as intended 1`] = `
+.c3 {
+  --width: calc(100vw/3);
+  height: var(--width);
+  width: var(--width);
+}
+
+.c0 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 100vh;
+  background: white;
+  -webkit-transition: top 0.4s ease-in-out 0s;
+  transition: top 0.4s ease-in-out 0s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.c1 {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(#ff8197,#ff9bac);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c2 {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-variant: all-small-caps;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: sans-serif;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  padding-left: 17px;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+@media (min-width:768px) {
+  .c3 {
+    --width: calc(100vw/4);
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    --width: calc(100vw/6);
+  }
+}
+
+@media (min-width:1280px) {
+  .c3 {
+    --width: calc(100vw/8);
+  }
+}
+
+<div
+  className="c0"
+  style={
+    Object {
+      "top": "0",
+    }
+  }
+>
+  <div
+    className="c1"
+  >
+    <button
+      className="c2"
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
+  <img
+    alt="image"
+    className="c3"
+    onClick={[Function]}
+    src="http://image.com/image.png"
+  />
+</div>
+`;

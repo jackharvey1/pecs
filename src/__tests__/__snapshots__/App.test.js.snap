@@ -1,39 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders renders as intended 1`] = `
-.c5 {
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
-}
-
-.c4 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 20px;
-}
-
 .c2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-}
-
-.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  font-size: 40px;
+  border-style: dashed;
+  border-color: lightgray;
+}
+
+.c2:first-child {
+  margin-left: auto;
+}
+
+.c2:last-child {
+  margin-right: auto;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -41,18 +42,95 @@ exports[`App component renders renders as intended 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
-  border-width: 1px 0;
-  border-color: lightgray;
-  border-style: solid;
-  min-height: 256px;
   width: 100vw;
-  position: relative;
+  --spacing: 0;
+}
+
+.c1 > * {
+  margin: var(--spacing);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c1:before {
+  content: '';
+  margin-left: 10px;
+}
+
+.c1:after {
+  content: '';
+  margin-right: 10px;
+}
+
+.c6 {
+  --width: calc(100vw/3);
+  height: var(--width);
+  width: var(--width);
 }
 
 .c3 {
-  position: relative;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 100vh;
+  background: white;
+  -webkit-transition: top 0.4s ease-in-out 0s;
+  transition: top 0.4s ease-in-out 0s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.c4 {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(#ff8197,#ff9bac);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c5 {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-variant: all-small-caps;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: sans-serif;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  padding-left: 17px;
+}
+
+.c5:focus {
+  outline: none;
 }
 
 .c0 {
@@ -75,88 +153,95 @@ exports[`App component renders renders as intended 1`] = `
   flex-direction: column;
 }
 
+@media (min-width:1024px) {
+  .c1 {
+    --spacing: 5px;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    --width: calc(100vw/4);
+  }
+}
+
+@media (min-width:1024px) {
+  .c6 {
+    --width: calc(100vw/6);
+  }
+}
+
+@media (min-width:1280px) {
+  .c6 {
+    --width: calc(100vw/8);
+  }
+}
+
 <div
   className="c0"
 >
   <div
     className="c1"
-    id="storyboard"
-    onDragOver={[Function]}
-    onDrop={[Function]}
   >
     <div
       className="c2"
-      id="storyboard-0"
-    />
-    <div
-      className="c2"
-      id="storyboard-0"
-    />
+      onClick={[Function]}
+    >
+      <svg
+        className={undefined}
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        />
+      </svg>
+    </div>
   </div>
   <div
-    className="c1"
-    id="pictureBank"
-    onDragOver={[Function]}
-    onDrop={[Function]}
+    className="c3"
+    style={
+      Object {
+        "top": "100vh",
+      }
+    }
   >
     <div
-      className="c2"
-      id="pictureBank-0"
+      className="c4"
+    >
+      <button
+        className="c5"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+    <img
+      alt="image1"
+      className="c6"
+      onClick={[Function]}
+      src="image1.jpg"
     />
-    <div
-      className="c3"
-      id="pictureBank"
-    >
-      <div
-        className="c4"
-      >
-        <img
-          alt="image1"
-          className="c5"
-          draggable={true}
-          id="pictureBank-0"
-          onDragStart={[Function]}
-          src="image1.jpg"
-        />
-      </div>
-    </div>
-    <div
-      className="c3"
-      id="pictureBank"
-    >
-      <div
-        className="c4"
-      >
-        <img
-          alt="image2"
-          className="c5"
-          draggable={true}
-          id="pictureBank-1"
-          onDragStart={[Function]}
-          src="image2.jpg"
-        />
-      </div>
-    </div>
-    <div
-      className="c3"
-      id="pictureBank"
-    >
-      <div
-        className="c4"
-      >
-        <img
-          alt="image3"
-          className="c5"
-          draggable={true}
-          id="pictureBank-2"
-          onDragStart={[Function]}
-          src="image3.jpg"
-        />
-      </div>
-    </div>
-    <div
-      className="c2"
-      id="pictureBank-3"
+    <img
+      alt="image2"
+      className="c6"
+      onClick={[Function]}
+      src="image2.jpg"
+    />
+    <img
+      alt="image3"
+      className="c6"
+      onClick={[Function]}
+      src="image3.jpg"
     />
   </div>
 </div>
