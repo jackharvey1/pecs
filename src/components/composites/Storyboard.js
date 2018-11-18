@@ -15,11 +15,12 @@ const FlexRow = styled.div`
     overflow-y: hidden;
 
     width: 100vw;
+    height: calc(100vh - 40px);
 
-    --spacing: 0;
+    --spacing: 10px;
 
     @media (min-width: 1024px) {
-        --spacing: 5px;
+        --spacing: 15px;
     }
 
     & > * {
@@ -29,12 +30,12 @@ const FlexRow = styled.div`
 
     &:before {
         content: '';
-        margin-left: 10px;
+        margin-left: 20px;
     }
 
     &:after {
         content: '';
-        margin-right: 10px;
+        margin-right: 20px;
     }
 `;
 

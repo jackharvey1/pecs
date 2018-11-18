@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Input = styled.input`
-    width: 100%;
+const TextArea = styled.textarea`
+    width: 125px;
+
+    @media (min-width: 1024px) {
+        width: 150px;
+    }
 
     margin-top: 12px;
 
@@ -14,13 +18,24 @@ const Input = styled.input`
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
 
+    resize: none;
+
     &:focus {
         outline: none;
+    }
+
+    @media print {
+        &::placeholder {
+            color: transparent;
+        }
     }
 `;
 
 const Caption = ({ addToCaption, caption, index }) => (
-    <Input
+    <TextArea
+        id="caption"
+        rows="3"
+        cols="10"
         value={caption}
         onChange={(event) => addToCaption(index, event)}
         placeholder="Add caption here"

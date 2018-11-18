@@ -2,23 +2,51 @@
 
 exports[`Caption component renders as intended 1`] = `
 .c0 {
-  width: 100%;
+  width: 125px;
   margin-top: 12px;
   border: none;
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
   text-align: center;
+  resize: none;
 }
 
 .c0:focus {
   outline: none;
 }
 
-<input
+@media (min-width:1024px) {
+  .c0 {
+    width: 150px;
+  }
+}
+
+@media print {
+  .c0::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .c0::-moz-placeholder {
+    color: transparent;
+  }
+
+  .c0:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .c0::placeholder {
+    color: transparent;
+  }
+}
+
+<textarea
   className="c0"
+  cols="10"
+  id="caption"
   onChange={[Function]}
   placeholder="Add caption here"
+  rows="3"
   value="Some text"
 />
 `;

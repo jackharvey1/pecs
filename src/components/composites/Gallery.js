@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import GridImage from '../atomics/GridImage';
+import MenuBar from '../atomics/MenuBar';
+import Button from '../atomics/Button';
 
 const GalleryContainer = styled.div`
     position: absolute;
@@ -18,44 +20,16 @@ const GalleryContainer = styled.div`
     flex-flow: row wrap;
     flex-grow: 1;
     align-content: flex-start;
-`;
 
-const MenuBar = styled.div`
-    width: 100%;
-    height: 40px;
-
-    background: linear-gradient(#ff8197, #ff9bac);
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-`;
-
-const Cancel = styled.button`
-    display: block;
-
-    background: none;
-    border: none;
-
-    color: white;
-
-    font-variant: all-small-caps;
-    font-size: 15px;
-    font-weight: 100;
-    font-family: sans-serif;
-    letter-spacing: 1.5px;
-
-    padding-left: 17px;
-
-    &:focus {
-        outline: none;
+    @media print {
+        display: none;
     }
 `;
 
 const Gallery = ({ data, hideGallery, addToStoryboard, galleryTopValue }) => (
     <GalleryContainer style={{ top: galleryTopValue }}>
         <MenuBar>
-            <Cancel onClick={hideGallery}>Cancel</Cancel>
+            <Button onClick={hideGallery}>Cancel</Button>
         </MenuBar>
         {data.map((image, i) => (
             <GridImage

@@ -2,13 +2,14 @@
 
 exports[`Storyboard component renders as intended 1`] = `
 .c5 {
-  width: 100%;
+  width: 125px;
   margin-top: 12px;
   border: none;
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
   text-align: center;
+  resize: none;
 }
 
 .c5:focus {
@@ -47,10 +48,9 @@ exports[`Storyboard component renders as intended 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  --size: 24px;
-  font-size: var(--size);
+  font-size: 24px;
   top: 0;
-  right: 25px;
+  right: 0;
   z-index: 0;
 }
 
@@ -108,7 +108,8 @@ exports[`Storyboard component renders as intended 1`] = `
   overflow-x: auto;
   overflow-y: hidden;
   width: 100vw;
-  --spacing: 0;
+  height: calc(100vh - 40px);
+  --spacing: 10px;
 }
 
 .c0 > * {
@@ -120,12 +121,36 @@ exports[`Storyboard component renders as intended 1`] = `
 
 .c0:before {
   content: '';
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .c0:after {
   content: '';
-  margin-right: 10px;
+  margin-right: 20px;
+}
+
+@media (min-width:1024px) {
+  .c5 {
+    width: 150px;
+  }
+}
+
+@media print {
+  .c5::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .c5::-moz-placeholder {
+    color: transparent;
+  }
+
+  .c5:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .c5::placeholder {
+    color: transparent;
+  }
 }
 
 @media (min-width:1024px) {
@@ -135,15 +160,21 @@ exports[`Storyboard component renders as intended 1`] = `
   }
 }
 
-@media (min-width:1024px) {
+@media print {
   .c3 {
-    right: 12px;
+    display: none;
+  }
+}
+
+@media print {
+  .c1 {
+    display: none;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    --spacing: 5px;
+    --spacing: 15px;
   }
 }
 
@@ -204,10 +235,13 @@ exports[`Storyboard component renders as intended 1`] = `
       className="c4"
       src="http://image.com/image.png"
     />
-    <input
+    <textarea
       className="c5"
+      cols="10"
+      id="caption"
       onChange={[Function]}
       placeholder="Add caption here"
+      rows="3"
       value={undefined}
     />
   </div>
@@ -265,10 +299,13 @@ exports[`Storyboard component renders as intended 1`] = `
       className="c4"
       src="http://image.com/image.png"
     />
-    <input
+    <textarea
       className="c5"
+      cols="10"
+      id="caption"
       onChange={[Function]}
       placeholder="Add caption here"
+      rows="3"
       value={undefined}
     />
   </div>
@@ -326,10 +363,13 @@ exports[`Storyboard component renders as intended 1`] = `
       className="c4"
       src="http://image.com/image.png"
     />
-    <input
+    <textarea
       className="c5"
+      cols="10"
+      id="caption"
       onChange={[Function]}
       placeholder="Add caption here"
+      rows="3"
       value={undefined}
     />
   </div>
