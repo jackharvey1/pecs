@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import images from '../assets';
 import Storyboard from './composites/Storyboard';
 import Gallery from './composites/Gallery';
+import NavBar from './composites/NavBar';
 
 const SuperContainer = styled.div`
     width: 100vw;
@@ -35,6 +36,7 @@ export default class App extends Component {
     render () {
         return (
             <SuperContainer>
+                <NavBar />
                 <Storyboard
                     centered
                     data={this.state.storyboard}
@@ -55,9 +57,23 @@ export default class App extends Component {
 
     addToCaption (index, event) {
         const storyboardClone = this.state.storyboard.slice();
+
+        const height = event.target.getAttribute('rows');
+        const width = event.target.getAttribute('cols');
+        const lines = event.target.value.split('\n');
+
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].length <= width) {
+                continue;
+            }
+
+            lines[i + 1] = lines[i].substring(width + 1) + (lines[i + 1] || '');
+            lines[i] = lines[i].substring(0, width);
+        }
+
         storyboardClone.splice(index, 1, {
             ...storyboardClone[index],
-            caption: event.target.value,
+            caption: lines.slice(0, height).join('\n'),
         });
 
         this.setState({

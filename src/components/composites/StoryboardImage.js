@@ -12,22 +12,20 @@ const InlineFlexDiv = styled.div`
 `;
 
 const DeleteButton = styled.div`
+    @media print {
+        display: none;
+    }
+
     position: absolute;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    --size: 24px;
-
-    font-size: var(--size);
+    font-size: 24px;
 
     top: 0;
-    right: 25px;
-
-    @media (min-width: 1024px) {
-        right: 12px;
-    }
+    right: 0;
 
     z-index: 0;
 

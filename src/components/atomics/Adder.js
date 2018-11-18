@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { MdAdd } from 'react-icons/md';
 
 const DottedSquare = styled.div`
+    @media print {
+        display: none;
+    }
+
     display: flex;
     align-items: center;
     justify-content: center;

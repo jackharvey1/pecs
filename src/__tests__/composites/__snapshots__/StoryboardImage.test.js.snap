@@ -2,13 +2,14 @@
 
 exports[`StoryboardImage component renders as intended 1`] = `
 .c3 {
-  width: 100%;
+  width: 125px;
   margin-top: 12px;
   border: none;
   color: #333333;
   font-size: 16px;
   font-family: Helvetica,Arial,sans-serif;
   text-align: center;
+  resize: none;
 }
 
 .c3:focus {
@@ -47,10 +48,9 @@ exports[`StoryboardImage component renders as intended 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  --size: 24px;
-  font-size: var(--size);
+  font-size: 24px;
   top: 0;
-  right: 25px;
+  right: 0;
   z-index: 0;
 }
 
@@ -65,15 +65,39 @@ exports[`StoryboardImage component renders as intended 1`] = `
 }
 
 @media (min-width:1024px) {
+  .c3 {
+    width: 150px;
+  }
+}
+
+@media print {
+  .c3::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .c3::-moz-placeholder {
+    color: transparent;
+  }
+
+  .c3:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  .c3::placeholder {
+    color: transparent;
+  }
+}
+
+@media (min-width:1024px) {
   .c2 {
     width: 150px;
     height: 150px;
   }
 }
 
-@media (min-width:1024px) {
+@media print {
   .c1 {
-    right: 12px;
+    display: none;
   }
 }
 
@@ -108,10 +132,13 @@ exports[`StoryboardImage component renders as intended 1`] = `
     className="c2"
     src="http://image.com/image.png"
   />
-  <input
+  <textarea
     className="c3"
+    cols="10"
+    id="caption"
     onChange={[Function]}
     placeholder="Add caption here"
+    rows="3"
     value="Caption"
   />
 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from '../components/App';
 
 describe('App component', () => {
@@ -9,15 +9,28 @@ describe('App component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('addToCaption adds the caption to the state when triggered', () => {
-        const wrapper = shallow(<App />);
+    it('adds a caption and truncates it so it does not exceed 3 rows', () => {
+        const wrapper = mount(<App />);
+        wrapper.setState({
+            storyboard: [{
+                src: 'https://image.com/image.png',
+                alt: 'image',
+                caption: '',
+            }],
+        });
+
         const mockEvent = {
             target: {
-                value: 'caption',
+                value: '* **** ***** * *** ***  ** * *',
+                getAttribute: (attr) => attr === 'rows' ? 3 : 10,
             },
         };
-        wrapper.instance().addToCaption(0, mockEvent);
-        expect(wrapper.state().storyboard[0]).toHaveProperty('caption', 'caption');
+
+        const caption = wrapper.find('textarea');
+        caption.simulate('change', mockEvent);
+        wrapper.update();
+
+        expect(wrapper.state().storyboard[0].caption).toEqual('* **** ***\n* * *** **\n  ** * *');
     });
 
     it('sets galleryOpenedAt to the passed index', () => {

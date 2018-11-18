@@ -7,6 +7,44 @@ exports[`Gallery component renders as intended 1`] = `
   width: var(--width);
 }
 
+.c1 {
+  width: 100%;
+  height: 40px;
+  color: white;
+  background: linear-gradient(#ff8197,#ff9bac);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: none;
+  border: none;
+  color: white;
+  font-variant: all-small-caps;
+  font-size: 15px;
+  font-weight: 100;
+  font-family: sans-serif;
+  -webkit-letter-spacing: 1.5px;
+  -moz-letter-spacing: 1.5px;
+  -ms-letter-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  padding: 0 17px;
+}
+
+.c2:focus {
+  outline: none;
+}
+
 .c0 {
   position: absolute;
   width: 100vw;
@@ -31,44 +69,6 @@ exports[`Gallery component renders as intended 1`] = `
   align-content: flex-start;
 }
 
-.c1 {
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(#ff8197,#ff9bac);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.c2 {
-  display: block;
-  background: none;
-  border: none;
-  color: white;
-  font-variant: all-small-caps;
-  font-size: 15px;
-  font-weight: 100;
-  font-family: sans-serif;
-  -webkit-letter-spacing: 1.5px;
-  -moz-letter-spacing: 1.5px;
-  -ms-letter-spacing: 1.5px;
-  letter-spacing: 1.5px;
-  padding-left: 17px;
-}
-
-.c2:focus {
-  outline: none;
-}
-
 @media (min-width:768px) {
   .c3 {
     --width: calc(100vw/4);
@@ -84,6 +84,18 @@ exports[`Gallery component renders as intended 1`] = `
 @media (min-width:1280px) {
   .c3 {
     --width: calc(100vw/8);
+  }
+}
+
+@media print {
+  .c1 {
+    display: none;
+  }
+}
+
+@media print {
+  .c0 {
+    display: none;
   }
 }
 

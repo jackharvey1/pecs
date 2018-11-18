@@ -29,6 +29,12 @@ exports[`Adder component renders as intended 1`] = `
   margin-right: auto;
 }
 
+@media print {
+  .c0 {
+    display: none;
+  }
+}
+
 <div
   className="c0"
   onClick={[Function]}
