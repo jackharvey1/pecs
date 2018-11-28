@@ -2,7 +2,7 @@
   "name": "pecs",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://s3.eu-west-2.amazonaws.com/jack-pecs/",
+  "homepage": "https://pecs.jackharvey.io",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
