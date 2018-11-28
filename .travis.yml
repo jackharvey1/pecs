@@ -14,7 +14,7 @@ deploy:
   provider: s3
   access_key_id: $ACCESS_KEY_ID
   secret_access_key: $SECRET_ACCESS_KEY
-  bucket: jack-pecs
+  bucket: pecs.jackharvey.io
   local_dir: build
   skip_cleanup: true
   region: eu-west-2
